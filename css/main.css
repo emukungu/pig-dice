@@ -1,3 +1,14 @@
 .playArea{
   border: 2px solid crimson;
+  margin: 100px;
+  height: 80vh;
+
+}
+#player1Form{
+  float: left;
+  padding: 10px;
+}
+#player2Form{
+  float: right;
+  padding: 10px;
 }

@@ -9,12 +9,25 @@
   <body>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-xs-12 col-md-12 bg-img playArea">
-          <div class="row">
+        <div class="col-xs-12 col-md-12 bg-img">
+          <!-- playArea -->
+          <div class="row playArea">
             <div class="col-xs-12 col-md-12">
-
+              <form id="player1Form" class="form-inline page-header">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Player1" id="player1">
+                </div>
+                <button type="submit" id="sendPlayer1Name" class="btn">Submit</button>
+              </form>
+              <form id="player2Form" class="form-inline page-header">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Player2" id="player2">
+                </div>
+                <button type="submit" id="sendPlayer2Name" class="btn">Submit</button>
+              </form>
             </div>
           </div>
+          <!-- playArea -->
         </div>
       </div>
     </div>
