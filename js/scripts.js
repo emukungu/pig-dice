@@ -36,3 +36,10 @@ function hold2(){
 
 
 //USER LOGIC
+$(document).ready(function(){
+  //get player names from form
+  var playerName1 = $("#player1").val()
+  var playerName2 = $("#player2").val()
+  
+
+})
