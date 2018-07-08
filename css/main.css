@@ -33,3 +33,9 @@
   padding: 50px;
   margin-top: 30vh;
 }
+.bg-img{
+  background-image: url("../img/bg2.jpg");
+  background-position: left;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
