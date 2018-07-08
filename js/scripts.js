@@ -49,6 +49,9 @@ $(document).ready(function(){
   $("input#player1").hide()
   $("input#player2").hide()
 
-
-
+  //All buttons enabled at start
+  $("#roll1").prop("disabled", false)
+  $("#hold1").prop("disabled", false)
+  $("#roll2").prop("disabled", false)
+  $("#hold2").prop("disabled", false)
 })
