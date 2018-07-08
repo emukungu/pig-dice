@@ -46,9 +46,15 @@ $(document).ready(function(){
   $("#hold1").prop("disabled", false)
   $("#roll2").prop("disabled", false)
   $("#hold2").prop("disabled", false)
-  //player rolls
+  //player1 rolls
   $("#roll1").click(function(){
     $("#roll2").prop("disabled", true)
     $("#hold2").prop("disabled", true)
     player1.rollAction()})
+  //player1 holds
+  $("#hold1").click(function(){
+    $("#roll1, #hold1").prop("disabled", true)
+    $("#roll2, #hold2").prop("disabled", false)
+    player1.hold()
+  })
 })
