@@ -7,11 +7,11 @@
 }
 #player1Form{
   float: left;
-  padding: 10px;
+  padding: 20px;
 }
 #player2Form{
   float: right;
-  padding: 10px;
+  padding: 20px;
 }
 .buttonPlayer1{
   position: absolute;
@@ -34,8 +34,13 @@
   margin-top: 30vh;
 }
 .bg-img{
-  background-image: url("../img/bg2.jpg");
-  background-position: left;
+  background-image: url("../img/bg1.jpg");
+  background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+#player1Display, #player2Display{
+  display: none;
+  color: white;
+  font-size: 30px;
 }
