@@ -25,9 +25,6 @@ Player.prototype.hold = function(){
 }
 
 
-
-
-
 //USER LOGIC
 $(document).ready(function(){
   //get player names from form
@@ -48,9 +45,10 @@ $(document).ready(function(){
   $("#hold2").prop("disabled", false)
   //player1 rolls
   $("#roll1").click(function(){
-    $("#roll2").prop("disabled", true)
-    $("#hold2").prop("disabled", true)
-    player1.rollAction()})
+    $("#roll2,#hold2").prop("disabled", true)
+    player1.rollAction()
+    $("#roll2,#hold2").prop("disabled", true)
+  })
   //player1 holds
   $("#hold1").click(function(){
     $("#roll1, #hold1").prop("disabled", true)
