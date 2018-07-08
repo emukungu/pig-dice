@@ -40,6 +40,9 @@ $(document).ready(function(){
   //get player names from form
   var playerName1 = $("#player1").val()
   var playerName2 = $("#player2").val()
-  
+  //players signin
+  var player1 = new Player(playerName1)
+  var player2 = new Player(playerName2)
+
 
 })
