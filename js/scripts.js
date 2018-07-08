@@ -43,6 +43,12 @@ $(document).ready(function(){
   //players signin
   var player1 = new Player(playerName1)
   var player2 = new Player(playerName2)
+  //Display players
+  $("p#player1Display").show()
+  $("p#player2Display").show()
+  $("input#player1").hide()
+  $("input#player2").hide()
+
 
 
 })
