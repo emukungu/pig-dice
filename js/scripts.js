@@ -6,7 +6,7 @@ function Player(name){
   this.totalScore = 0
 }
 
-function roll(){
+function roll(){// maybe a prototype of sort
   //function to generate random numbers for each roll of the dice
   var roll = Math.floor((Math.random()*20) + 0)
 
@@ -16,12 +16,23 @@ function roll(){
   }
   else {
     this.totalScore += roll
-    this.scorePerTurn = roll  
+    this.scorePerTurn = roll
   }
 }
 
+function hold1(){
+  $("#hold1").click(function(){
+    $("#roll1,#hold1").prop("disabled", true)
+    $("#roll2, #hold2").prop("disabled", false)
+  })
+}
 
-
+function hold2(){
+  $("#hold2").click(function(){
+    $("#roll2,#hold2").prop("disabled", true)
+    $("#roll1, #hold1").prop("disabled", false)
+  })
+}
 
 
 //USER LOGIC
