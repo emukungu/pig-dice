@@ -10,29 +10,22 @@ Player.prototype.rollAction = function(){// maybe a prototype of sort
   //function to generate random numbers for each roll of the dice
   var roll = Math.floor((Math.random()*20) + 0)
 
-  if (roll === 1) {
-    this.totalScore += 0
+  if (roll === 1 && roll === 0) {
     this.scorePerTurn = 0
+    break;
   }
   else {
-    this.totalScore += roll
     this.scorePerTurn = roll
+    continue
   }
 }
 
-function hold1(){
-  $("#hold1").click(function(){
-    $("#roll1,#hold1").prop("disabled", true)
-    $("#roll2, #hold2").prop("disabled", false)
-  })
+Player.prototype.hold = function(){
+  this.totalScore += roll
 }
 
-function hold2(){
-  $("#hold2").click(function(){
-    $("#roll2,#hold2").prop("disabled", true)
-    $("#roll1, #hold1").prop("disabled", false)
-  })
-}
+
+
 
 
 //USER LOGIC
@@ -57,7 +50,5 @@ $(document).ready(function(){
   $("#roll1").click(function(){
     $("#roll2").prop("disabled", true)
     $("#hold2").prop("disabled", true)
-    player1.rollAction()
-
-  })
+    player1.rollAction()})
 })
