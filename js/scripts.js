@@ -6,7 +6,7 @@ function Player(name){
   this.totalScore = 0
 }
 
-function roll(){// maybe a prototype of sort
+Player.prototype.rollAction = function(){// maybe a prototype of sort
   //function to generate random numbers for each roll of the dice
   var roll = Math.floor((Math.random()*20) + 0)
 
@@ -44,14 +44,20 @@ $(document).ready(function(){
   var player1 = new Player(playerName1)
   var player2 = new Player(playerName2)
   //Display players
-  $("p#player1Display").show()
-  $("p#player2Display").show()
+  $("p#player1Display, #totalScore1").show()
+  $("p#player2Display, #totalScore2").show()
   $("input#player1").hide()
   $("input#player2").hide()
-
   //All buttons enabled at start
   $("#roll1").prop("disabled", false)
   $("#hold1").prop("disabled", false)
   $("#roll2").prop("disabled", false)
   $("#hold2").prop("disabled", false)
+  //player rolls
+  $("#roll1").click(function(){
+    $("#roll2").prop("disabled", true)
+    $("#hold2").prop("disabled", true)
+    player1.rollAction()
+
+  })
 })
