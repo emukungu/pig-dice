@@ -8,20 +8,19 @@ function Player(name){
 
 Player.prototype.rollAction = function(){// maybe a prototype of sort
   //function to generate random numbers for each roll of the dice
-  var roll = Math.floor((Math.random()*20) + 0)
-
-  if (roll === 1 || roll === 0) {
+  var roll = Math.floor(Math.random()*6) + 1
+  if (roll === 1) {
     this.scorePerTurn = 0
-    // break
   }
   else {
     this.scorePerTurn = roll
-    // continue
   }
+  return this.scorePerTurn
 }
 
 Player.prototype.hold = function(){
-  this.totalScore += roll
+  this.totalScore += this.scorePerTurn
+  return this.totalScore
 }
 
 
@@ -37,13 +36,22 @@ $(document).ready(function(){
 
     $("#roll1").click(function(){
       $("#roll2,#hold2").prop("disabled", true)
-      player1.rollAction()
-      $("#roll2,#hold2").prop("disabled", true)
+      // $("#turnDisplay").text(player1.rollAction())
+      if (player1.rollAction() === 0) {
+        $("#roll1,#hold1").prop("disabled", true)
+        $("#roll2,#hold2").prop("disabled", false)
+      }
+      else{
+        $("#roll1,#hold1").prop("disabled", false)
+        $("#roll2,#hold2").prop("disabled", true)
+      }
+      $("#turnDisplay").text(player1.rollAction())
     })
+
     $("#hold1").click(function(){
       $("#roll1, #hold1").prop("disabled", true)
       $("#roll2, #hold2").prop("disabled", false)
-      player1.hold()
+      $("#totalScore1").text(player1.hold())
     })
   })
 
@@ -54,5 +62,7 @@ $(document).ready(function(){
     $("#player2Display").html(player2.name)
     $("#player2Display, #totalScore2").show()
     $("#player2, #sendPlayer2Name").hide()
+
+    
   })
 })
