@@ -39,7 +39,7 @@
   background-size: cover;
   background-repeat: no-repeat;
 }
-#player1Display, #player2Display, #totalScore1, #totalScore2{
+#player1Display, #player2Display, .scoreDescription{
   display: none;
   color: white;
   font-size: 30px;

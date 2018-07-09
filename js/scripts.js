@@ -10,7 +10,7 @@ Player.prototype.rollAction = function(){// maybe a prototype of sort
   //function to generate random numbers for each roll of the dice
   var roll = Math.floor((Math.random()*20) + 0)
 
-  if (roll === 1 && roll === 0) {
+  if (roll === 1 || roll === 0) {
     this.scorePerTurn = 0
     // break
   }
@@ -40,6 +40,11 @@ $(document).ready(function(){
       player1.rollAction()
       $("#roll2,#hold2").prop("disabled", true)
     })
+    $("#hold1").click(function(){
+      $("#roll1, #hold1").prop("disabled", true)
+      $("#roll2, #hold2").prop("disabled", false)
+      player1.hold()
+    })
   })
 
   $("#player2Form").submit(function(event){
@@ -49,22 +54,5 @@ $(document).ready(function(){
     $("#player2Display").html(player2.name)
     $("#player2Display, #totalScore2").show()
     $("#player2, #sendPlayer2Name").hide()
-  })
-
-  $("#roll1").prop("disabled", false)
-  $("#hold1").prop("disabled", false)
-  $("#roll2").prop("disabled", false)
-  $("#hold2").prop("disabled", false)
-  //player1 rolls
-  // $("#roll1").click(function(){
-  //   $("#roll2,#hold2").prop("disabled", true)
-  //   player1.rollAction()
-  //   $("#roll2,#hold2").prop("disabled", true)
-  // })
-  //player1 holds
-  $("#hold1").click(function(){
-    $("#roll1, #hold1").prop("disabled", true)
-    $("#roll2, #hold2").prop("disabled", false)
-    player1.hold()
   })
 })
