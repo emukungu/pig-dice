@@ -63,6 +63,24 @@ $(document).ready(function(){
     $("#player2Display, #totalScore2").show()
     $("#player2, #sendPlayer2Name").hide()
 
-    
+    $("#roll2").click(function(){
+      $("#roll1,#hold1").prop("disabled", true)
+      // $("#turnDisplay").text(player1.rollAction())
+      if (player2.rollAction() === 0) {
+        $("#roll2,#hold2").prop("disabled", true)
+        $("#roll1,#hold1").prop("disabled", false)
+      }
+      else{
+        $("#roll2,#hold2").prop("disabled", false)
+        $("#roll1,#hold1").prop("disabled", true)
+      }
+      $("#turnDisplay").text(player2.rollAction())
+    })
+
+    $("#hold2").click(function(){
+      $("#roll2, #hold2").prop("disabled", true)
+      $("#roll1, #hold1").prop("disabled", false)
+      $("#totalScore2").text(player2.hold())
+    })
   })
 })
