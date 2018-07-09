@@ -6,7 +6,7 @@ function Player(name){
   this.totalScore = 0
 }
 
-Player.prototype.rollAction = function(){// maybe a prototype of sort
+Player.prototype.rollAction = function(){
   //function to generate random numbers for each roll of the dice
   var roll = Math.floor(Math.random()*6) + 1
   if (roll === 1) {
